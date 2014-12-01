@@ -1,7 +1,9 @@
 #ifndef PERSON_H
 #define PERSON_H
-
+#include "person.h"
 #include <string>
+#include <vector>
+
 
 using namespace std;
 
@@ -10,8 +12,8 @@ class Person
 public:
     string nafn;
     string kyn;
-    int faedingarar;
-    int danarar;
+    string faedingarar;
+    string danarar;
     Person();
 };
 

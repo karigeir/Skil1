@@ -9,12 +9,9 @@ using namespace std;
 int main()
 {
     UserInterface ui = UserInterface();
-    Person a = Person();
-    ui.start(a);
+    ui.start();
 
     //CompSciPersonService person = CompSciPersonService();
-
-
 
     return 0;
 }

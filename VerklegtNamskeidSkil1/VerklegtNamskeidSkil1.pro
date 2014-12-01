@@ -26,3 +26,5 @@ HEADERS += \
     userinterface.h \
     person.h \
     personrepository.h
+
+OTHER_FILES +=

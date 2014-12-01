@@ -6,9 +6,12 @@
 
 class PersonRepository
 {
+private:
+    vector<Person> personVector;
 public:
     PersonRepository();
     void add(Person a);
+    void display();
 };
 
 #endif // PERSONREPOSITORY_H

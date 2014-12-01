@@ -6,6 +6,6 @@ Person::Person()
 {
     nafn = "";
     kyn = "";
-    faedingarar = 0;
-    danarar = 0;
+    faedingarar = "";
+    danarar = "";
 }

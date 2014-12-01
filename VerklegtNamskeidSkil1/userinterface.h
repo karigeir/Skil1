@@ -8,9 +8,9 @@ class UserInterface
 {
 public:
     UserInterface();
-    void start(Person a);
+    void start();
 private:
-    //compscipersonservice Compscipersonservice;
+    CompSciPersonService compSciPersonService;
 };
 
 #endif // USERINTERFACE_H

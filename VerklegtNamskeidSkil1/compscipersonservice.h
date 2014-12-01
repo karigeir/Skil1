@@ -10,6 +10,7 @@ public:
     CompSciPersonService();
     void add(Person a);
     void remove();
+    void display();
 private:
     PersonRepository personRepo;
 };
