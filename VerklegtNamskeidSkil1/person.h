@@ -2,16 +2,18 @@
 #define PERSON_H
 
 #include <string>
+#include <fstream>
 
 using namespace std;
 
 class Person
 {
 public:
-    string nafn;
+    string fornafn;
+    string eftirnafn;
     string kyn;
-    int faedingarar;
-    int danarar;
+    string faedingarar;
+    string danarar;
     Person();
 };
 

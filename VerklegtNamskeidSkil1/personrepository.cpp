@@ -5,7 +5,7 @@ PersonRepository::PersonRepository()
 {
 }
 
-void PersonRepository::add(Person a)
+void PersonRepository::add(Person b)
 {
 
 }

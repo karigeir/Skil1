@@ -8,7 +8,7 @@ class CompSciPersonService
 {
 public:
     CompSciPersonService();
-    void add(Person a);
+    void add(Person b);
     void remove();
 private:
     PersonRepository personRepo;

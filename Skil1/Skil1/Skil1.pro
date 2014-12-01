@@ -16,7 +16,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    cspersons.cpp
+    compscipersonservice.cpp \
+    userinterface.cpp
 
 HEADERS += \
-    cspersons.h
+    compscipersonservice.h \
+    userinterface.h

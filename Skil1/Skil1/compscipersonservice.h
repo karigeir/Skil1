@@ -1,10 +1,11 @@
-#ifndef CSPERSONS_H
-#define CSPERSONS_H
+#ifndef COMPSCIPERSONSERVICE_H
+#define COMPSCIPERSONSERVICE_H
 
-class CSpersons
+class CompSciPersonService
 {
 public:
-    CSpersons();
+    CompSciPersonService();
+    void add();
 };
 
-#endif // CSPERSONS_H
+#endif // COMPSCIPERSONSERVICE_H

@@ -1,6 +1,7 @@
 #include "userinterface.h"
 #include <string>
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -9,12 +10,22 @@ UserInterface::UserInterface()
     CompSciPersonService compSciPersonService;
 }
 
-void UserInterface::start(Person a) {
-    cout << "Velkomin/n!" << endl;
-    cout << "Addadu nafni, kyni, faedingarari, danarari" << endl;
-    cin >> a.nafn >> a.kyn >> a.faedingarar >> a.danarar;
-    cout << "Nafnid er: " << a.nafn << endl;
-    cout << "Kynid er: " << a.kyn << endl;
-    cout << "Faedingararid er: " << a.faedingarar << endl;
-    cout << "Danarar er: " << a.danarar << endl;
-    }
+void UserInterface::start() {
+    Person b = Person();
+
+    cout << "Her muntu skra tekkta personu ur sogu tolvunarfraedinnar." << endl;
+    cout << endl;
+
+       cout << "Fornafn: ";
+       cin >> b.fornafn;
+       cout << "Eftirnafn: ";
+       cin >> b.eftirnafn;
+       cout << "Kyn: ";
+       cin >> b.kyn;
+       cout << "Faedingarar: ";
+       cin >> b.faedingarar;
+       cout << "Danarar: ";
+       cin >> b.danarar;
+       string lengja = b.fornafn + " " + b.eftirnafn + " " + b.kyn+ " " + b.faedingarar + " " + b.danarar;
+       cout << lengja << endl;
+       }

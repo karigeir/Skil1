@@ -9,7 +9,7 @@ CompSciPersonService::CompSciPersonService()
 {
 }
 
-void CompSciPersonService::add(Person a)
+void CompSciPersonService::add(Person b)
 {
 }
 
