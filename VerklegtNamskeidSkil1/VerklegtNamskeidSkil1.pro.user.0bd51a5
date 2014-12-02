@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 3.2.2, 2014-12-01T23:02:53. -->
-=======
-<!-- Written by QtCreator 3.2.2, 2014-12-01T18:08:39. -->
->>>>>>> e2bdd80e66db697e8906a79cd56721efccae4e85
+<!-- Written by QtCreator 3.2.2, 2014-11-29T17:15:14. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{ebbd52a9-e98a-43c8-9644-8abcfd5dbf1c}</value>
+  <value type="QByteArray">{0bd51a5b-5e8d-4649-b939-78b35e821a51}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -227,8 +223,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">VerklegtNamskeidSkil1</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">VerklegtNamskeidSkil12</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Kári/Skil1/VerklegtNamskeidSkil1/VerklegtNamskeidSkil1.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Qt/Tools/QtCreator/bin/VerklegtNamskeidSkil1/VerklegtNamskeidSkil1.pro</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">VerklegtNamskeidSkil1.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>

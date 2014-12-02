@@ -1,11 +1,14 @@
 #include "person.h"
+#include <fstream>
 
 using namespace std;
 
 Person::Person()
 {
-    nafn = "";
+    fornafn = "";
+    eftirnafn = "";
     kyn = "";
     faedingarar = "";
     danarar = "";
 }
+

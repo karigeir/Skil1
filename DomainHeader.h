@@ -1,0 +1,4 @@
+#ifndef DOMAINHEADER_H
+#define DOMAINHEADER_H
+
+#endif // DOMAINHEADER_H

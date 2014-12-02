@@ -1,10 +1,20 @@
 #include <QCoreApplication>
 #include <iostream>
+#include "userinterface.h"
+#include "compscipersonservice.h"
+
 using namespace std;
 
 int main()
 {
-    cout << "hallo" << endl;
+
+    UserInterface ui = UserInterface();
+    ui.start();
+
+
+    CompSciPersonService person = CompSciPersonService();
+    person.add();
+
 
     return 0;
 }
