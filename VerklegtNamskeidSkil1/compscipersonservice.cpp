@@ -41,7 +41,6 @@ void CompSciPersonService::searchFunction(string search)
     cout << "Unable to open file" << endl;
     exit(1);
     }
-
     size_t pos;
     bool found_string = false;
 
@@ -62,4 +61,39 @@ void CompSciPersonService::searchFunction(string search)
       {
             cout << "Search string not found!" << endl;
       }
+}
+
+void CompSciPersonService::howToSort()
+{
+    int input;
+
+    cout << endl;
+    cout << "Choose 1 to sort by firstname: " << endl;
+    cout << "Choose 2 to sort by lastname: " << endl;
+    cout << "Choose 3 to sort by gender: " << endl;
+    cout << "Choose 4 to sort by year born: " << endl;
+    cout << "Choose 5 to sort by year died: " << endl;
+    cout << ":";
+    cin >> input;
+
+    switch(input){
+
+    case 1:
+        cout << "By firstname:" << endl;
+        break;
+    case 2:
+        cout << "By lastname:" << endl;
+        break;
+    case 3:
+        cout << "By gender:" << endl;
+        break;
+    case 4:
+        cout << "By year born:" << endl;
+        break;
+    case 5:
+        cout << "By year died:" << endl;
+        break;
+     default:
+        cout << "wrong input" << endl;
+    }
 }

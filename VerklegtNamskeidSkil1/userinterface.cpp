@@ -22,15 +22,18 @@ void UserInterface::start() {
 
     Person a = Person();
     do{
+        cout << endl;
         cout << "Choose 1 to add a known computer scientist." << endl;
         cout << "Choose 2 to display what you have added. " << endl;
         cout << "Choose 3 to search." << endl;
-        cout << "Choose 4 to quit. " << endl;
+        cout << "Choose 4 to sort results. " << endl;
+        cout << "Choose 5 to quit. " << endl;
         cout << ":";
         cin >> operation;
 
         switch(operation){
             case 1:
+                cout << endl;
                 cout << "Add a firstname, surname, gender, birthyear and a year of death" << endl;
 
                 cin >> a.fornafn >> a.eftirnafn >> a.kyn >> a.faedingarar >> a.danarar;
@@ -42,6 +45,7 @@ void UserInterface::start() {
                 compSciPersonService.add(a);
                 break;
             case 2:
+                cout << endl;
                 compSciPersonService.display();
                 break;
             case 3:
@@ -50,11 +54,13 @@ void UserInterface::start() {
                 compSciPersonService.searchFunction(searchString);
                 break;
             case 4:
+                compSciPersonService.howToSort();
+            case 5:
                 cout << "Quitting" << endl;
                 break;
             default:
                 cout << "Invalid command, try again." << endl;
         }
 
-   }while((operation != 4));
+   }while((operation != 5));
 }

@@ -13,6 +13,7 @@ public:
     void display();
     void searchFunction(string search);
     void addtolist(Person a);
+    void howToSort();
 private:
     PersonRepository personRepo;
 };
