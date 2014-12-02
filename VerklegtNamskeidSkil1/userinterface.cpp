@@ -23,7 +23,8 @@ void UserInterface::start() {
     do{
         cout << "Choose 1 to add a known computer scientist." << endl;
         cout << "Choose 2 to display what you have added. " << endl;
-        cout << "Choose 3 to quit. " << endl;
+        cout << "Choose 3 to search." << endl;
+        cout << "Choose 4 to quit. " << endl;
         cout << ":";
         cin >> operation;
 
