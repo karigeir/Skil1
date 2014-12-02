@@ -1,6 +1,7 @@
 #include "userinterface.h"
 #include <string>
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -10,33 +11,40 @@ UserInterface::UserInterface()
 }
 
 void UserInterface::start() {
-    string skipun;
 
-    cout << "Velkomin/n!" << endl;
-    cout << "Eftirfarandi skipanir er haegt ad nota: add (til ad baeta vid personu), display (til ad syna hvada personum hefur verid baett vid). Veldu skipun. " << endl;
-    cin >> skipun;
 
-    while ((skipun == "Add")||(skipun == "add"))
-    {
-        Person a = Person();
-        cout << "Addadu nafni, kyni, faedingarari, danarari" << endl;
-        cin >> a.nafn >> a.kyn >> a.faedingarar >> a.danarar;
-        cout << "Nafnid er: " << a.nafn << endl;
-        cout << "Kynid er: " << a.kyn << endl;
-        cout << "Faedingararid er: " << a.faedingarar << endl;
-        cout << "Danarar er: " << a.danarar << endl;
-        compSciPersonService.add(a);
-        cout << endl << "Veldu naestu skipun.";
-        cin >> skipun;
-    }
-    while ((skipun == "Display")||(skipun == "display"))
-    {
-       compSciPersonService.display();
-       cout << endl << "Veldu naestu skipun.";
-       cin >> skipun;
-    }
+    ifstream menu ("asciiart.txt");
+    cout << menu.rdbuf();
 
-    cout << "Tetta er ekki logleg skipun. Veldu aftur." << endl;
+    int operation;
 
+    Person a = Person();
+    do{
+        cout << "Choose 1 to add a known computer scientist." << endl;
+        cout << "Choose 2 to display what you have added. " << endl;
+        cout << "Choose 3 to quit. " << endl;
+        cout << ":";
+        cin >> operation;
+
+        switch(operation){
+            case 1:
+                cout << "Add a name, gender, birthyear, year of death" << endl;
+                cin >> a.nafn >> a.kyn >> a.faedingarar >> a.danarar;
+                cout << "Name is: " << a.nafn << endl;
+                cout << "Gender is: " << a.kyn << endl;
+                cout << "Birthyear is: " << a.faedingarar << endl;
+                cout << "Year of death is: " << a.danarar << endl;
+                compSciPersonService.add(a);
+                break;
+            case 2:
+                compSciPersonService.display();
+                break;
+            case 3:
+                cout << "Quitting" << endl;
+                break;
+            default:
+                cout << "Invalid command, try again." << endl;
+        }
+
+   }while((operation != 3));
 }
-
