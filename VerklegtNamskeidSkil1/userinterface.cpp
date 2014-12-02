@@ -12,8 +12,6 @@ UserInterface::UserInterface()
 
 void UserInterface::start() {
 
-
-
     ifstream menu ("ascii.txt");
     cout << menu.rdbuf();
     cout << endl;
