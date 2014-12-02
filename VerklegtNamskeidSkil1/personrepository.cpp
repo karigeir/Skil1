@@ -7,27 +7,27 @@ using namespace std;
 
 bool compare_firstname(const Person& first, const Person& second)
 {
-    return first.fornafn > second.fornafn;
+    return first.fornafn < second.fornafn;
 }
 
 bool compare_surname(const Person& first, const Person& second)
 {
-    return first.eftirnafn > second.eftirnafn;
+    return first.eftirnafn < second.eftirnafn;
 }
 
 bool compare_gender(const Person& first, const Person& second)
 {
-    return first.kyn > second.kyn;
+    return first.kyn < second.kyn;
 }
 
 bool compare_birthyear(const Person& first, const Person& second)
 {
-    return first.faedingarar > second.faedingarar;
+    return first.faedingarar < second.faedingarar;
 }
 
 bool compare_deathyear(const Person& first, const Person& second)
 {
-    return first.danarar > second.danarar;
+    return first.danarar < second.danarar;
 }
 
 
@@ -46,13 +46,13 @@ void PersonRepository::add(Person a)
     outFile << a.faedingarar << " ";
     outFile << a.danarar << "\n";
     outFile.close();
-    addtolist(a);
+    addtolist();
 }
 
 
 list<Person> personuListi = list<Person>();
 
-void PersonRepository::addtolist(Person a)
+void PersonRepository::addtolist()
 {
     ifstream inFile ("example.txt");
     string word1, word2, word3, word4, word5;
@@ -60,7 +60,7 @@ void PersonRepository::addtolist(Person a)
 
     while (inFile >> word1 >> word2 >> word3 >> word4 >> word5 )
     {
-        //Person b = Person();
+        Person a = Person();
         a.fornafn = word1;
         a.eftirnafn = word2;
         a.kyn = word3;
@@ -69,21 +69,79 @@ void PersonRepository::addtolist(Person a)
 
         personuListi.push_back(Person(a));
     }
+    display();
 }
 
 void PersonRepository::display()
 {
+//    ifstream inFile ("example.txt");
+//    string word1, word2, word3, word4, word5;
+
+
+//    while (inFile >> word1 >> word2 >> word3 >> word4 >> word5 )
+//    {
+//        Person a = Person();
+//        a.fornafn = word1;
+//        a.eftirnafn = word2;
+//        a.kyn = word3;
+//        a.faedingarar = word4;
+//        a.danarar = word5;
+
+//        personuListi.push_back(Person(a));
+//    }
+
      for(list<Person>::iterator iter = personuListi.begin(); iter != personuListi.end(); iter++)
      {
-         //personuListi.sort(compare_name);
-         //personuListi.sort(compare_gender);
-         //personuListi.sort(compare_birthyear);
-         //personuListi.sort(compare_birthyear);
          cout << iter->fornafn << " " << iter->eftirnafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
      }
-
-     //inFile.close();
 }
+
+void PersonRepository::displayByFirstname()
+{
+     for(list<Person>::iterator iter = personuListi.begin(); iter != personuListi.end(); iter++)
+     {
+         personuListi.sort(compare_firstname);
+         cout << iter->fornafn << " " << iter->eftirnafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
+     }
+}
+
+void PersonRepository::displayBySurname()
+{
+     for(list<Person>::iterator iter = personuListi.begin(); iter != personuListi.end(); iter++)
+     {
+         personuListi.sort(compare_surname);
+         cout << iter->fornafn << " " << iter->eftirnafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
+     }
+}
+
+void PersonRepository::displayByGender()
+{
+     for(list<Person>::iterator iter = personuListi.begin(); iter != personuListi.end(); iter++)
+     {
+         personuListi.sort(compare_gender);
+         cout << iter->fornafn << " " << iter->eftirnafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
+     }
+}
+
+void PersonRepository::displayByBirthYear()
+{
+     for(list<Person>::iterator iter = personuListi.begin(); iter != personuListi.end(); iter++)
+     {
+         personuListi.sort(compare_birthyear);
+         cout << iter->fornafn << " " << iter->eftirnafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
+     }
+}
+
+
+void PersonRepository::displayByDeathYear()
+{
+     for(list<Person>::iterator iter = personuListi.begin(); iter != personuListi.end(); iter++)
+     {
+         personuListi.sort(compare_deathyear);
+         cout << iter->fornafn << " " << iter->eftirnafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
+     }
+}
+
 
 void PersonRepository::searchFunction(string search)
 {

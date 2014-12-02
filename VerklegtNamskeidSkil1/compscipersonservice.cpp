@@ -18,7 +18,7 @@ void CompSciPersonService::add(Person a)
 
 void CompSciPersonService::addtolist(Person a)
 {
-    personRepo.addtolist(a);
+    personRepo.addtolist();
 }
 
 void CompSciPersonService::remove()
@@ -27,7 +27,7 @@ void CompSciPersonService::remove()
 
 void CompSciPersonService::display()
 {
-    personRepo.display();
+    personRepo.addtolist();
 }
 
 void CompSciPersonService::searchFunction(string search)
@@ -73,6 +73,7 @@ void CompSciPersonService::howToSort()
     cout << "Choose 3 to sort by gender: " << endl;
     cout << "Choose 4 to sort by year born: " << endl;
     cout << "Choose 5 to sort by year died: " << endl;
+    cout << "Choose 6 to quit: " << endl;
     cout << ":";
     cin >> input;
 
@@ -80,18 +81,25 @@ void CompSciPersonService::howToSort()
 
     case 1:
         cout << "By firstname:" << endl;
+        personRepo.displayByFirstname();
         break;
     case 2:
         cout << "By lastname:" << endl;
+        personRepo.displayBySurname();
         break;
     case 3:
         cout << "By gender:" << endl;
+        personRepo.displayByGender();
         break;
     case 4:
         cout << "By year born:" << endl;
+        personRepo.displayByBirthYear();
         break;
     case 5:
         cout << "By year died:" << endl;
+        personRepo.displayByDeathYear();
+        break;
+    case 6:
         break;
      default:
         cout << "wrong input" << endl;

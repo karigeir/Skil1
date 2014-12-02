@@ -13,7 +13,12 @@ public:
     void add(Person a);
     void display();
     void searchFunction(string search);
-    void addtolist(Person a);
+    void addtolist();
+    void displayByFirstname();
+    void displayBySurname();
+    void displayByGender();
+    void displayByBirthYear();
+    void displayByDeathYear();
 };
 
 #endif // PERSONREPOSITORY_H
