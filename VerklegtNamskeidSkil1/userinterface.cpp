@@ -32,6 +32,7 @@ void UserInterface::start() {
         switch(operation){
             case 1:
                 cout << "Add a firstname, surname, gender, birthyear and a year of death" << endl;
+
                 cin >> a.fornafn >> a.eftirnafn >> a.kyn >> a.faedingarar >> a.danarar;
                 cout << "Firstname is: " << a.fornafn << endl;
                 cout << "Surname is: " << a.eftirnafn << endl;

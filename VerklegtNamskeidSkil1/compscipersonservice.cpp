@@ -16,6 +16,11 @@ void CompSciPersonService::add(Person a)
     personRepo.add(a);
 }
 
+void CompSciPersonService::addtolist(Person a)
+{
+    personRepo.addtolist(a);
+}
+
 void CompSciPersonService::remove()
 {
 }

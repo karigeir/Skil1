@@ -10,7 +10,7 @@ bool compare_firstname(const Person& first, const Person& second)
     return first.fornafn > second.fornafn;
 }
 
-bool compare_secondname(const Person& first, const Person& second)
+bool compare_surname(const Person& first, const Person& second)
 {
     return first.eftirnafn > second.eftirnafn;
 }
@@ -46,24 +46,33 @@ void PersonRepository::add(Person a)
     outFile << a.faedingarar << " ";
     outFile << a.danarar << "\n";
     outFile.close();
+    addtolist(a);
 }
+
+
+list<Person> personuListi = list<Person>();
+
+void PersonRepository::addtolist(Person a)
+{
+    ifstream inFile ("example.txt");
+    string word1, word2, word3, word4, word5;
+
+
+    while (inFile >> word1 >> word2 >> word3 >> word4 >> word5 )
+    {
+        //Person b = Person();
+        a.fornafn = word1;
+        a.eftirnafn = word2;
+        a.kyn = word3;
+        a.faedingarar = word4;
+        a.danarar = word5;
+
+        personuListi.push_back(Person(a));
+    }
+}
+
 void PersonRepository::display()
 {
-     ifstream inFile ("example.txt");
-     string word1, word2, word3, word4, word5;
-     list<Person> personuListi = list<Person>();
-
-     while (inFile >> word1 >> word2 >> word3 >> word4 >> word5 )
-     {
-         Person b = Person();
-         b.fornafn = word1;
-         b.eftirnafn = word2;
-         b.kyn = word3;
-         b.faedingarar = word4;
-         b.danarar = word5;
-         personuListi.push_back(Person(b));
-     }
-
      for(list<Person>::iterator iter = personuListi.begin(); iter != personuListi.end(); iter++)
      {
          //personuListi.sort(compare_name);
@@ -73,10 +82,16 @@ void PersonRepository::display()
          cout << iter->fornafn << " " << iter->eftirnafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
      }
 
-     inFile.close();
+     //inFile.close();
 }
 
 void PersonRepository::searchFunction(string search)
 {
-
+    for(list<Person>::iterator iter = personuListi.begin(); iter != personuListi.end(); iter++)
+    {
+        if(search==iter->fornafn)
+        {
+            cout << iter->fornafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
+        }
+    }
 }
