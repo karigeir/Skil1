@@ -13,8 +13,7 @@ PersonRepository::PersonRepository()
 void PersonRepository::add(Person a)
 {
 
-    //Reading from a whitespace delimited file
-//    ifstream inFile ("inFile.txt");
+
 //    if(inFile.is_open()) {
 //            // read in
 //            string line;
@@ -25,9 +24,6 @@ void PersonRepository::add(Person a)
 //    //        string word1, word2, word3;
 //    //        //inFile  word1 << word2 << word3;
 
-
-
-//            inFile.close();
     ofstream outFile;
     outFile.open("example.txt", std::ofstream::app);
     outFile << a.nafn << " ";
@@ -39,11 +35,24 @@ void PersonRepository::add(Person a)
 void PersonRepository::display()
 {
      ifstream inFile ("example.txt");
-     string line;
      string word1, word2, word3, word4;
+     list<Person> personuListi = list<Person>();
+
      while (inFile >> word1 >> word2 >> word3 >> word4 )
      {
-         cout << word1 << " " << word2 << " " << word3 << " " << word4 << endl;
+         Person b = Person();
+         b.nafn = word1;
+         b.kyn = word2;
+         b.faedingarar = word3;
+         b.danarar = word4;
+         personuListi.push_back(Person(b));
      }
+
+     for(list<Person>::iterator iter = personuListi.begin(); iter != personuListi.end(); iter++)
+     {
+         cout << iter->nafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
+     }
+
+     inFile.close();
 }
 

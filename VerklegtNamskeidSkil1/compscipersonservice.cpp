@@ -23,3 +23,12 @@ void CompSciPersonService::display()
 {
     personRepo.display();
 }
+
+void CompSciPersonService::addtolist(Person a)
+{
+    list<Person> personuListi = list<Person>();
+
+    personuListi.push_back(Person(a));
+
+
+}

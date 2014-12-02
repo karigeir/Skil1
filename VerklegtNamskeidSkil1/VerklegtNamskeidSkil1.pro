@@ -27,4 +27,5 @@ HEADERS += \
     person.h \
     personrepository.h
 
-OTHER_FILES +=
+OTHER_FILES += \
+    ../../../../Qt/Tools/QtCreator/bin/build-VerklegtNamskeidSkil1-Desktop_Qt_5_3_MinGW_32bit-Debug/ascii.txt
