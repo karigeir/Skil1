@@ -10,7 +10,7 @@ CompSciPersonService::CompSciPersonService()
     personRepo = PersonRepository();
 }
 
-void CompSciPersonService::add(Person b)
+void CompSciPersonService::add(Person a)
 {
     personRepo.add(a);
 }

@@ -10,7 +10,7 @@ PersonRepository::PersonRepository()
     personVector = vector<Person>();
 }
 
-void PersonRepository::add(Person b)
+void PersonRepository::add(Person a)
 {
 
     //Reading from a whitespace delimited file

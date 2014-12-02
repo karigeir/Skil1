@@ -8,7 +8,7 @@ class CompSciPersonService
 {
 public:
     CompSciPersonService();
-    void add(Person b);
+    void add(Person a);
     void remove();
     void display();
 private:
