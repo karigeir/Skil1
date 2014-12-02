@@ -4,7 +4,8 @@ using namespace std;
 
 Person::Person()
 {
-    nafn = "";
+    fornafn = "";
+    eftirnafn = "";
     kyn = "";
     faedingarar = "";
     danarar = "";

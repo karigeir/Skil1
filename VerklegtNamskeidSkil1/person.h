@@ -10,7 +10,8 @@ using namespace std;
 class Person
 {
 public:
-    string nafn;
+    string fornafn;
+    string eftirnafn;
     string kyn;
     string faedingarar;
     string danarar;

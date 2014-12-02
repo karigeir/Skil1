@@ -31,9 +31,10 @@ void UserInterface::start() {
 
         switch(operation){
             case 1:
-                cout << "Add a name, gender, birthyear and a year of death" << endl;
-                cin >> a.nafn >> a.kyn >> a.faedingarar >> a.danarar;
-                cout << "Name is: " << a.nafn << endl;
+                cout << "Add a firstname, surname, gender, birthyear and a year of death" << endl;
+                cin >> a.fornafn >> a.eftirnafn >> a.kyn >> a.faedingarar >> a.danarar;
+                cout << "Firstname is: " << a.fornafn << endl;
+                cout << "Surname is: " << a.eftirnafn << endl;
                 cout << "Gender is: " << a.kyn << endl;
                 cout << "Birthyear is: " << a.faedingarar << endl;
                 cout << "Year of death is: " << a.danarar << endl;
@@ -43,7 +44,7 @@ void UserInterface::start() {
                 compSciPersonService.display();
                 break;
             case 3:
-                cout << "Type search string" << endl;
+                cout << "Type search string: ";
                 cin >> searchString;
                 compSciPersonService.searchFunction(searchString);
                 break;

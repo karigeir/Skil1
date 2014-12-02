@@ -5,9 +5,14 @@
 
 using namespace std;
 
-bool compare_name(const Person& first, const Person& second)
+bool compare_firstname(const Person& first, const Person& second)
 {
-    return first.nafn > second.nafn;
+    return first.fornafn > second.fornafn;
+}
+
+bool compare_secondname(const Person& first, const Person& second)
+{
+    return first.eftirnafn > second.eftirnafn;
 }
 
 bool compare_gender(const Person& first, const Person& second)
@@ -35,7 +40,8 @@ void PersonRepository::add(Person a)
 {
     ofstream outFile;
     outFile.open("example.txt", std::ofstream::app);
-    outFile << a.nafn << " ";
+    outFile << a.fornafn << " ";
+    outFile << a.eftirnafn << " ";
     outFile << a.kyn << " ";
     outFile << a.faedingarar << " ";
     outFile << a.danarar << "\n";
@@ -44,16 +50,17 @@ void PersonRepository::add(Person a)
 void PersonRepository::display()
 {
      ifstream inFile ("example.txt");
-     string word1, word2, word3, word4;
+     string word1, word2, word3, word4, word5;
      list<Person> personuListi = list<Person>();
 
-     while (inFile >> word1 >> word2 >> word3 >> word4 )
+     while (inFile >> word1 >> word2 >> word3 >> word4 >> word5 )
      {
          Person b = Person();
-         b.nafn = word1;
-         b.kyn = word2;
-         b.faedingarar = word3;
-         b.danarar = word4;
+         b.fornafn = word1;
+         b.eftirnafn = word2;
+         b.kyn = word3;
+         b.faedingarar = word4;
+         b.danarar = word5;
          personuListi.push_back(Person(b));
      }
 
@@ -63,7 +70,7 @@ void PersonRepository::display()
          //personuListi.sort(compare_gender);
          //personuListi.sort(compare_birthyear);
          //personuListi.sort(compare_birthyear);
-         cout << iter->nafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
+         cout << iter->fornafn << " " << iter->eftirnafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
      }
 
      inFile.close();
