@@ -5,6 +5,27 @@
 
 using namespace std;
 
+bool compare_name(const Person& first, const Person& second)
+{
+    return first.nafn > second.nafn;
+}
+
+bool compare_gender(const Person& first, const Person& second)
+{
+    return first.kyn > second.kyn;
+}
+
+bool compare_birthyear(const Person& first, const Person& second)
+{
+    return first.faedingarar > second.faedingarar;
+}
+
+bool compare_deathyear(const Person& first, const Person& second)
+{
+    return first.danarar > second.danarar;
+}
+
+
 PersonRepository::PersonRepository()
 {
     personVector = vector<Person>();
@@ -12,18 +33,6 @@ PersonRepository::PersonRepository()
 
 void PersonRepository::add(Person a)
 {
-
-
-//    if(inFile.is_open()) {
-//            // read in
-//            string line;
-//            while(getline(inFile,line)) {
-//                //TODO: Process line
-//            }
-
-//    //        string word1, word2, word3;
-//    //        //inFile  word1 << word2 << word3;
-
     ofstream outFile;
     outFile.open("example.txt", std::ofstream::app);
     outFile << a.nafn << " ";
@@ -50,9 +59,17 @@ void PersonRepository::display()
 
      for(list<Person>::iterator iter = personuListi.begin(); iter != personuListi.end(); iter++)
      {
+         //personuListi.sort(compare_name);
+         //personuListi.sort(compare_gender);
+         //personuListi.sort(compare_birthyear);
+         //personuListi.sort(compare_birthyear);
          cout << iter->nafn << " " << iter->kyn << " " << iter->faedingarar <<  " " << iter->danarar << endl;
      }
 
      inFile.close();
 }
 
+void PersonRepository::searchFunction(string search)
+{
+
+}

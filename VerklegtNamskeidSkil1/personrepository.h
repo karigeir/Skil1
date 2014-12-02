@@ -12,6 +12,7 @@ public:
     PersonRepository();
     void add(Person a);
     void display();
+    void searchFunction(string search);
 };
 
 #endif // PERSONREPOSITORY_H

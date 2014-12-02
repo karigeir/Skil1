@@ -18,6 +18,7 @@ void UserInterface::start() {
     cout << endl;
 
     int operation;
+    string searchString;
 
     Person a = Person();
     do{
@@ -42,7 +43,10 @@ void UserInterface::start() {
                 compSciPersonService.display();
                 break;
             case 3:
-                cout << "Her kemur search function" << endl;
+                cout << "Type search string" << endl;
+                cin >> searchString;
+                compSciPersonService.searchFunction(searchString);
+                break;
             case 4:
                 cout << "Quitting" << endl;
                 break;

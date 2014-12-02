@@ -11,7 +11,7 @@ public:
     void add(Person a);
     void remove();
     void display();
-    void addtolist(Person a);
+    void searchFunction(string search);
 private:
     PersonRepository personRepo;
 };
