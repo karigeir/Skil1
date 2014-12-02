@@ -13,8 +13,9 @@ UserInterface::UserInterface()
 void UserInterface::start() {
 
 
-    ifstream menu ("asciiart.txt");
+    ifstream menu ("ascii.txt");
     cout << menu.rdbuf();
+    cout << endl;
 
     int operation;
 
@@ -28,7 +29,7 @@ void UserInterface::start() {
 
         switch(operation){
             case 1:
-                cout << "Add a name, gender, birthyear, year of death" << endl;
+                cout << "Add a name, gender, birthyear and a year of death" << endl;
                 cin >> a.nafn >> a.kyn >> a.faedingarar >> a.danarar;
                 cout << "Name is: " << a.nafn << endl;
                 cout << "Gender is: " << a.kyn << endl;
@@ -40,11 +41,13 @@ void UserInterface::start() {
                 compSciPersonService.display();
                 break;
             case 3:
+                cout << "Her kemur search function" << endl;
+            case 4:
                 cout << "Quitting" << endl;
                 break;
             default:
                 cout << "Invalid command, try again." << endl;
         }
 
-   }while((operation != 3));
+   }while((operation != 4));
 }
