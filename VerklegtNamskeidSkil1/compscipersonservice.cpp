@@ -16,6 +16,11 @@ void CompSciPersonService::add(Person a)
     personRepo.add(a);
 }
 
+void CompSciPersonService::addtolist(Person a)
+{
+    personRepo.addtolist(a);
+}
+
 void CompSciPersonService::remove()
 {
 }
@@ -32,29 +37,29 @@ void CompSciPersonService::searchFunction(string search)
 
     inFile.open("example.txt");
 
-    if(!inFile)
-    {
+    if(!inFile){
     cout << "Unable to open file" << endl;
     exit(1);
     }
 
     size_t pos;
-    while(inFile.good())
-    {
-       getline(inFile,line); // get line from file
+    bool found_string = false;
+
+      while(getline(inFile,line))
+      { // get line from file
           pos=line.find(search); // search
           if(pos!=string::npos)
                 {
                     cout <<"Search string found!" << endl;
                     cout << "Displaying search results: " << endl;
+                    found_string = true;
                     personRepo.searchFunction(search);
                     break;
                 }
-          else
-          {
-              cout << "Search string not found." << endl;
-            break;
-          }
-    }
-}
+      }
 
+      if(found_string == false)
+      {
+            cout << "Search string not found!" << endl;
+      }
+}

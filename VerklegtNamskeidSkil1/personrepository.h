@@ -13,6 +13,7 @@ public:
     void add(Person a);
     void display();
     void searchFunction(string search);
+    void addtolist(Person a);
 };
 
 #endif // PERSONREPOSITORY_H

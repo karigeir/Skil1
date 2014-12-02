@@ -12,6 +12,7 @@ public:
     void remove();
     void display();
     void searchFunction(string search);
+    void addtolist(Person a);
 private:
     PersonRepository personRepo;
 };
